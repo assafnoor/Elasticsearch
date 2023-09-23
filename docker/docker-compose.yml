@@ -7,6 +7,8 @@ services:
       - discovery.type=single-node
     ports:
       - 9200:9200
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/datafile
     networks:
       - elk-network
 
@@ -25,3 +27,5 @@ services:
 networks:
   elk-network:
     driver: bridge
+volumes:
+  elasticsearch-data:
